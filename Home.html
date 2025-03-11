@@ -36,8 +36,9 @@
     </nav>
  </header>
 
- <section class="d-flex justify-content-around align-items-center">
 
+ <!--   Intro section -->
+ <section class="d-flex justify-content-around align-items-center">
     <div class="d-flex flex-column  align-items-center gap-0 mt-2">
     <h1>
         Build Your Body & <br>
@@ -48,12 +49,14 @@
          accusantium doloremque laudantium, totam rem aperiam, <br>
           eaque ipsa quae ab illo inventore  architecto <br>
            beatae vitae dicta sunt explicabo.</p>
-         <button class="join">Join Today</button>
+         <button class="join" data-bs-toggle="modal" data-bs-target="#Register" >Join Today</button>
         </div>
            <dotlottie-player src="https://lottie.host/fca73217-a95e-4daf-80a5-c00b0afd0563/mhMW5Z2QUV.lottie"
             background="transparent" speed="1" style="width: 500px; height: 500px" loop autoplay></dotlottie-player>
  </section>
 
+
+ <!--   Trainer section -->
 
  <section class="trainer mb-5">
     <h3 class="pb-1 text-center">Our Trainer</h3>
@@ -63,7 +66,7 @@
          accusantium doloremque laudantium, totam rem aperiam,  
          eaque ipsa quae ab illo inventore veritatis et quasi 
           architecto beatae vitae dicta sunt explicabo.</p>
-
+           <!--   Card for trainer One  -->
     <div class="row row-cols-1 row-cols-md-3 g-4 mt-5 m-4 justify-content-center">
         <div class="col-sm-10 col-lg-3">
           <div class="card border-success bg-light">
@@ -75,9 +78,10 @@
             </div>
               <h5 class="info text-center">Trainer</h5>
           </div>
-          
+
         </div>
 
+           <!--   Card for trainer two  -->
 
         <div class="col-sm-10 col-lg-3">
             <div class="card border-danger bg-light ">
@@ -91,6 +95,7 @@
             </div>
             
           </div>
+           <!--   Card for trainer thre  -->
 
           <div class="col-sm-10 col-lg-3">
             <div class="card border-primary  bg-light">
@@ -106,6 +111,7 @@
           </div>
  </section>
  
+ <!--   Price section -->
 
  <section class="price">
     <h3 class="pb-1 text-center">Our Pricing</h3>
@@ -129,6 +135,8 @@
     </div>
 
     <div class="row row-cols-1 row-cols-md-3 g-4 mt-5 m-4 justify-content-center">
+
+                   <!--   Card for basic  plan  -->
         <div class="col-sm-10 col-lg-3">
           <div class="card ">
           <dotlottie-player class="card-img-top ms-auto me-auto" src="https://lottie.host/8c8947b9-1f3f-4109-ae9a-a78ae5275580/ZLYnpMATa0.lottie"
@@ -144,6 +152,7 @@
             
           </div>
         </div>
+             <!--   Card for Professional  plan  -->
        
         <div class="col-sm-10 col-lg-3">
             <div class="card ">
@@ -169,6 +178,7 @@
             </div>
           </div>
 
+             <!--   Card for Vip  plan  -->
 
           <div class="col-sm-10 col-lg-3">
             <div class="card ">
@@ -196,9 +206,60 @@
       </div>
  </section>
 
+ <!--The Register Form -->
+<!-- Modal -->
+<div class="modal fade" id="Register" tabindex="-1" aria-labelledby="RegisterModal" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="RegisterModal">Register</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="card px-1 py-4">
+                <div class="card-body">
+                    <h6 class="information mt-4">Please provide following information</h6>
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <div class="form-group">
+                                <!-- <label for="name">Name</label> --> <input class="form-control" type="text" placeholder="Name"> </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <div class="form-group">
+                                <div class="input-group"> <input class="form-control" type="number" placeholder="Mobile"> </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <div class="form-group">
+                                <div class="input-group"> <input class="form-control" type="email" placeholder="Email "> </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <div class="form-group">
+                                <div class="input-group"> <input class="form-control" type="password" placeholder="Password"> </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class=" d-flex flex-column text-center px-5 mt-3 mb-3"> <small class="agree-text">By Clicking Register  you agree to the</small> 
+                        <a href="#" class="terms">Terms & Conditions</a> </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <button type="button" class="">Register</button>
+            </div>
+        </div>
+    </div>
+</div>
+ 
+  <!--footer-->
  <footer class="bg-body-tertiary text-center">
-  
-  
     <!-- Copyright -->
     <div class="text-center p-2 pb-3 " style="background-color: rgba(0, 0, 0, 0.05);">
           <!-- Grid container -->
@@ -267,5 +328,9 @@
  <script src="https://unpkg.com/@dotlottie/player-component@2.7.12/dist/dotlottie-player.mjs" type="module"></script>
 
 <script src="js/bootstrap.min.js"></script>
+<!-- Include Bootstrap JS and dependencies -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/5.1.3/js/bootstrap.min.js"></script>
 </body>
 </html>
