@@ -12,12 +12,16 @@ header {
     box-shadow: 0 0 300px 10px  #db470d ;
 }
 
-.btn-orange , button {
+button{
     border: transparent 1px solid;
     padding: 6px 20px;
     color: white;
+   
+}
+.btn-orange ,header button , .intro button{
     background-color: #F92524;
     border-radius: 10px !important;
+
 }
 
 .btn-orange{
@@ -90,7 +94,7 @@ button:hover , .btn-orange:hover{
     border-radius: 3px;
     width:80%;
 }
-.trainer .card{
+.trainer1 .card{
     height: 300px;
    background: url(./../assets/trainer.png);
    background-position: center;
@@ -99,8 +103,23 @@ button:hover , .btn-orange:hover{
    background-repeat: no-repeat;
 }
 
+.trainer2 .card{
+    height: 300px;
+   background: url(./../assets/trainer1.png);
+   background-position: center;
+   background-position-x: left;
+   background-size: contain;
+   background-repeat: no-repeat;
+}
 
-
+.trainer3 .card{
+    height: 300px;
+   background: url(./../assets/trainer2.png);
+   background-position: center;
+   background-position-x: left;
+   background-size: contain;
+   background-repeat: no-repeat;
+}
 .trainer .info {
     margin-left: 50%;
     padding: 10px;
@@ -108,3 +127,10 @@ button:hover , .btn-orange:hover{
     margin-bottom: auto;
 
 }
+
+section .card:hover {
+    transform: scale(1.1,1.1);
+    transition: all 1s ;
+}
+
+ 

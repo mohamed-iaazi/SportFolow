@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home-Sport</title>
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="./css/card.css">
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
 </head>
@@ -12,7 +13,7 @@
  <header >
     <nav class="navbar navbar-expanded-lg">
         <div class="container">
-        <a class="navbar-brand h1  ps-5 pt-3" href="">Sport</a>
+        <a class="navbar-brand h1  ps-5 pt-3 " href="">Sport</a>
         <!-- Navbar toggler -->
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
         aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -39,7 +40,7 @@
 
 
  <!--   Intro section -->
- <section class="d-flex justify-content-around align-items-center">
+ <section class="d-flex justify-content-around align-items-center intro">
     <div class="d-flex flex-column  align-items-center gap-0 mt-2">
     <h1>
         Build Your Body & <br>
@@ -57,10 +58,88 @@
  </section>
 
 
+
+
+ <!--   classes section -->
+
+ <section class="classes mb-5">
+  <h3 class="pb-1 text-center ">Our Classes</h3>
+<span class="d-block line ms-auto me-auto mb-5"></span>
+
+  <p  class="text-center w-75 d-block ms-auto me-auto ">Sed ut perspiciatis unde omnis iste natus error sit voluptatem 
+       accusantium doloremque laudantium, .</p>
+         <!--   Card for class One  -->
+  <div class=" row row-cols-1 row-cols-md-3 g-4 mt-5 m-4 justify-content-center">
+      <div class="col-sm-10 col-lg-3">
+           <div class="cards first">
+          <div class="imgBx">
+            <img src="./../assets/gym.png">
+          </div>
+          <div class="contentBx">
+            <h2>Football</h2>
+            <div class="size mt-3">
+              <h3>Mambers :</h3>
+              <span>0</span>
+              <span>5</span>
+              <span>0</span>
+              <span>0</span>
+            </div>
+            <button class="btn-success m-5" href="#">Join Now</button>
+          </div>
+        </div> 
+
+      </div>
+
+         <!--   Card for class two  -->
+
+      <div class=" col-sm-10 col-lg-3">
+           <div class="cards second">
+  <div class="imgBx">
+    <img src="./../assets/gym.png">
+  </div>
+  <div class="contentBx">
+    <h2>Wellness Coach</h2>
+    <div class="size mt-3">
+      <h3>Mambers :</h3>
+      <span>0</span>
+      <span>0</span>
+      <span>6</span>
+      <span>0</span>
+    </div>
+    <button class="btn-danger m-5" href="#">Join Now</button>
+  </div>
+</div>
+          
+        </div>
+         <!--   Card for class thre  -->
+
+        <div class=" col-sm-10 col-lg-3">
+                  <div class="cards thre">
+          <div class="imgBx">
+            <img src="./../assets/gym.png">
+          </div>
+          <div class="contentBx">
+            <h2>Fitness</h2>
+            <div class="size mt-3">
+              <h3>Mambers :</h3>
+              <span>0</span>
+              <span>2</span>
+              <span>8</span>
+              <span>8</span>
+            </div>
+            <button class="btn-info m-5" href="#">Join Now</button>
+          </div>
+        </div>
+          
+        </div>
+</section>
+
+
+
  <!--   Trainer section -->
 
  <section class="trainer mb-5">
-    <h3 class="pb-1 text-center">Our Trainer</h3>
+    <h3 class="pb-1 text-center ">Our Trainer</h3>
  <span class="d-block line ms-auto me-auto mb-5"></span>
 
     <p  class="text-center w-75 d-block ms-auto me-auto ">Sed ut perspiciatis unde omnis iste natus error sit voluptatem 
@@ -68,7 +147,7 @@
          eaque ipsa quae ab illo inventore veritatis et quasi 
           architecto beatae vitae dicta sunt explicabo.</p>
            <!--   Card for trainer One  -->
-    <div class="row row-cols-1 row-cols-md-3 g-4 mt-5 m-4 justify-content-center">
+    <div class="trainer1 row row-cols-1 row-cols-md-3 g-4 mt-5 m-4 justify-content-center">
         <div class="col-sm-10 col-lg-3">
           <div class="card border-success bg-light">
             <div class="info  ">
@@ -84,7 +163,7 @@
 
            <!--   Card for trainer two  -->
 
-        <div class="col-sm-10 col-lg-3">
+        <div class="trainer2 col-sm-10 col-lg-3">
             <div class="card border-danger bg-light ">
               <div class="info  ">
                 <h4 class="card-title text-center">John Doe</h4>
@@ -98,7 +177,7 @@
           </div>
            <!--   Card for trainer thre  -->
 
-          <div class="col-sm-10 col-lg-3">
+          <div class="trainer3 col-sm-10 col-lg-3">
             <div class="card border-primary  bg-light">
               <div class="info  ">
                 <h4 class="card-title text-center">John Doe</h4>
@@ -200,7 +279,7 @@
                   <span class="lineSepare ms-auto me-auto d-block"></span>
               </div>
                 <h5 class="text-center">500Dh/Month</h5>
-                <button class="mt-3">Get Started</button>
+                <button class="mt-3 btn-success">Get Started</button>
               
             </div>
           </div>
