@@ -1,18 +1,31 @@
 package Model;
 public abstract   class User {
 
+    private  int userId;
     private  String userName;
     private  String  email ;
     private  int mobile ;
     private  String password;
     private  String role ;
 
-    public User(String userName, String email, int mobile, String password,String role) {
+    public User(int userId ,String userName, String email, int mobile, String password,String role) {
         this.userName = userName;
         this.email = email;
         this.mobile = mobile;
         this.password = password;
         this.role = role;
+        this.userId = userId;
+    }
+
+    public User() {
+    }
+
+    public int getUserId() {
+        return userId;
+    }
+
+    public void setUserId(int userId) {
+        this.userId = userId;
     }
 
     public String getUserName() {
@@ -55,9 +68,6 @@ public abstract   class User {
         this.role = role;
     }
 
-    public abstract  boolean Add (User user);
-    public abstract  boolean Delete (User user);
-    public abstract  boolean Modifier (User user);
-    public abstract  boolean Display (User user);
+
 
 }
