@@ -19,7 +19,7 @@
 
   <error-page>
     <error-code>404</error-code>
-    <location>/View/404.html</location>
+    <location>/View/404.jsp</location>
   </error-page>
 
 </web-app>
