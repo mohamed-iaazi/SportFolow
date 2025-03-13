@@ -3,11 +3,14 @@ package Controller;
 import Dao.impl.UserDaoImp;
 import Model.Member;
 import Model.User;
+import jakarta.servlet.DispatcherType;
+import jakarta.servlet.RequestDispatcher;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import jakarta.servlet.http.HttpSession;
 
 import java.io.IOException;
 
@@ -25,13 +28,24 @@ public class RegisterServlet extends HttpServlet {
         UserDaoImp dao = new UserDaoImp();
         User user= new Member(username,email,Integer.parseInt(mobile),password,member.getRole());
         if (dao.addUser(user)!=0){
-            resp.sendRedirect(req.getContextPath()+"/Classes.jsp");
+            HttpSession session = req.getSession();
+            session.setAttribute("user",dao.addUser(user));
+            session.setAttribute("role",member.getRole());
+
+            System.out.println("class clalled");
         }
+        System.out.println("class clalled");
+        RequestDispatcher dispatcher= getServletContext().getRequestDispatcher("/View/Classes.jsp");
+        dispatcher.forward(req,resp);
+
+
+
+
     }
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-
-
+        RequestDispatcher dispatcher= getServletContext().getRequestDispatcher("/Classes.jsp");
+        dispatcher.forward(req,resp);
     }
 }

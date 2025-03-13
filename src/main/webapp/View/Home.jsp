@@ -303,6 +303,7 @@
 <!-- Modal -->
 <div  class="modal fade" id="Register" tabindex="-1" aria-labelledby="RegisterModal" aria-hidden="true">
     <div class="modal-dialog" role="document">
+        <form method="POST" action="Register">
         <div class="modal-content">
             <div class="modal-header">
                 <h5 class="modal-title" id="RegisterModal">Register</h5>
@@ -311,7 +312,6 @@
             <div class="card px-1 py-4">
                 <div class="card-body">
                     <h6 class="information mt-4">Please provide following information</h6>
-                    <form method="POST" action="Register">
                     <div class="row">
                         <div class="col-sm-12">
                             <div class="form-group">
@@ -349,10 +349,12 @@
             </div>
             <div class="modal-footer">
                 <button type="button"  class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+
                     <input type="submit"  class="btn btn-success" value="Register">
-                </form>
+
             </div>
         </div>
+        </form>
     </div>
 </div>
 
