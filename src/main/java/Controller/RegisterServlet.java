@@ -31,15 +31,13 @@ public class RegisterServlet extends HttpServlet {
             HttpSession session = req.getSession();
             session.setAttribute("user",dao.addUser(user));
             session.setAttribute("role",member.getRole());
-
-            System.out.println("class clalled");
+            System.out.println("class");
+            resp.sendRedirect(req.getContextPath()+"/Classes");
         }
-        System.out.println("class clalled");
-        RequestDispatcher dispatcher= getServletContext().getRequestDispatcher("/View/Classes.jsp");
-        dispatcher.forward(req,resp);
-
-
-
+        else {
+           req.setAttribute("errour" , "Erreur");
+           resp.sendRedirect(req.getContextPath()+"/");
+        }
 
     }
 
