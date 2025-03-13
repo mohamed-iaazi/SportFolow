@@ -5,17 +5,13 @@
          version="6.0">
 
   <display-name>Sport Flow</display-name>
-  <welcome-file-list>
-    <welcome-file>/View/Home.jsp</welcome-file>
-  </welcome-file-list>
   <servlet-mapping>
     <servlet-name>default</servlet-name>
     <url-pattern>/assets/*</url-pattern>
     <url-pattern>/css/*</url-pattern>
     <url-pattern>/js/*</url-pattern>
-
-
   </servlet-mapping>
+
 
   <error-page>
     <error-code>404</error-code>

@@ -7,6 +7,7 @@ import Util.PasswordUtils;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
@@ -26,6 +27,12 @@ private Connection con= DBConnection.getConnection();
              ps.setInt(3,member.getMobile());
              ps.setString(4, PasswordUtils.encryptPassword(user.getPassword()));
              ps.executeUpdate();
+
+             ResultSet rs = ps.getGeneratedKeys();
+             if (rs.next()) {
+                 int id=rs.getInt(1);
+                 return id;
+             }
          }
 
 

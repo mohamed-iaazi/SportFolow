@@ -18,11 +18,21 @@
 </head>
 <body>
 
+<header class="mb-4" style="z-index:999; overflow: hidden;  ">
+    <nav class="navbar fixed-top navbar-expand-lg navbar-light bg-light p-2 ">
+        <div class="container-fluid p-2">
+            <button onclick="history.back()" style="border: none; background: none; cursor: pointer; font-size: 16px; color: black">
+                <i class="fas fa-arrow-left"></i> Back
+            </button>
+        </div>
+    </nav>
+</header>
+
 
 <!--   classes section -->
 
-<section class="classes mb-5">
-    <h3 class="pb-1 text-center ">Our Classes</h3>
+<section class="classes mt-5 mb-5">
+    <h3 class="pb-1 text-center pt-5 ">Our Classes</h3>
     <span class="d-block line ms-auto me-auto mb-5"></span>
 
     <p  class="text-center w-75 d-block ms-auto me-auto ">Sed ut perspiciatis unde omnis iste natus error sit voluptatem
@@ -116,7 +126,7 @@
                         <span>0</span>
                         <span>0</span>
                     </div>
-                    <button class="btn-success m-1" href="#">Join Now</button>
+                    <button class="btn-success " href="#">Join Now</button>
                 </div>
             </div>
 
@@ -138,7 +148,7 @@
                         <span>6</span>
                         <span>0</span>
                     </div>
-                    <button class="btn-danger m-1" href="#">Join Now</button>
+                    <button class="btn-danger" href="#">Join Now</button>
                 </div>
             </div>
 
@@ -159,7 +169,7 @@
                         <span>8</span>
                         <span>8</span>
                     </div>
-                    <button class="btn-info m-1" href="#">Join Now</button>
+                    <button class="btn-info " href="#">Join Now</button>
                 </div>
             </div>
 

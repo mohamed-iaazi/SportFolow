@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="jakarta.tags.core" %>
 <%--
   Created by IntelliJ IDEA.
   User: iaazi
@@ -343,9 +344,13 @@
                     <div class=" d-flex flex-column text-center px-5 mt-3 mb-3"> <small class="agree-text">By Clicking Register  you agree to the</small>
                         <a href="#" class="terms">Terms & Conditions</a> </div>
                 </div>
+                <c:if  test="${not empty errour}">
+
                 <div class="p-2 d-none failed">
-                    <h5 class="text-danger text-center">Register Failed Try Again !</h5>
+                    <h5 class="text-danger text-center">Register Failed Try Again ! ${errour}</h5>
                 </div>
+                </c:if>
+
             </div>
             <div class="modal-footer">
                 <button type="button"  class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
@@ -465,42 +470,42 @@
     </div>
     <!-- Copyright -->
 </footer>
-<script>
-    function  register() {
-        fetch("Register",{
-            method:"POST",
-        })
+<%--<script>--%>
+<%--    function  register() {--%>
+<%--        fetch("Register",{--%>
+<%--            method:"POST",--%>
+<%--        })--%>
 
-            .then((res) => {
-                if (res.status===200){
-                    alert("Successfully Registered");
-                    const register = document.getElementById("Register");
-                    register.setAttribute('style','display:none;')
-                    register.remove();
-                    document.querySelector('.modal-backdrop').remove();
-                    document.querySelector('.modal-open').style.overflow="visible";
-                }
-                else{
-                    alert("Failed");
-                    document.querySelector('.failed').classList.remove('d-none');
-                    document.querySelectorAll('input').forEach((i) =>{
-                        i.addEventListener('click',()=>{
-                            value=''
-                        })
-                    });
-                }
-                console.log(res);
-            })
-            .catch((err) => {
-                console.log(err);
-            })
+<%--            .then((res) => {--%>
+<%--                if (res.status===200){--%>
+<%--                    alert("Successfully Registered");--%>
+<%--                    const register = document.getElementById("Register");--%>
+<%--                    register.setAttribute('style','display:none;')--%>
+<%--                    register.remove();--%>
+<%--                    document.querySelector('.modal-backdrop').remove();--%>
+<%--                    document.querySelector('.modal-open').style.overflow="visible";--%>
+<%--                }--%>
+<%--                else{--%>
+<%--                    alert("Failed");--%>
+<%--                    document.querySelector('.failed').classList.remove('d-none');--%>
+<%--                    document.querySelectorAll('input').forEach((i) =>{--%>
+<%--                        i.addEventListener('click',()=>{--%>
+<%--                            value=''--%>
+<%--                        })--%>
+<%--                    });--%>
+<%--                }--%>
+<%--                console.log(res);--%>
+<%--            })--%>
+<%--            .catch((err) => {--%>
+<%--                console.log(err);--%>
+<%--            })--%>
 
-    }
+<%--    }--%>
 
-    document.getElementById("register_btn").addEventListener("click", function () {
-  register()
-    })
-</script>
+<%--    document.getElementById("register_btn").addEventListener("click", function () {--%>
+<%--  register()--%>
+<%--    })--%>
+<%--</script>--%>
 <script src="https://unpkg.com/@dotlottie/player-component@2.7.12/dist/dotlottie-player.mjs" type="module"></script>
 <script src="js/bootstrap.min.js"></script>
 <!-- Include Bootstrap JS and dependencies -->
