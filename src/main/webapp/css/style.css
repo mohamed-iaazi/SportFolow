@@ -1,5 +1,5 @@
 body {
-    background: url(./../assets/background.png)  ;
+    background: url(/SportFlow/assets/background.png)  ;
     background-position:left;
     background-size:auto;
     background-repeat:no-repeat;
@@ -96,7 +96,7 @@ button:hover , .btn-orange:hover{
 }
 .trainer1 .card{
     height: 300px;
-   background: url(./../assets/trainer.png);
+   background: url(/SportFlow/assets/trainer.png);
    background-position: center;
    background-position-x: left;
    background-size: contain;
@@ -105,7 +105,7 @@ button:hover , .btn-orange:hover{
 
 .trainer2 .card{
     height: 300px;
-   background: url(./../assets/trainer1.png);
+   background: url(/SportFlow/assets/trainer1.png);
    background-position: center;
    background-position-x: left;
    background-size: contain;
@@ -114,7 +114,7 @@ button:hover , .btn-orange:hover{
 
 .trainer3 .card{
     height: 300px;
-   background: url(./../assets/trainer2.png);
+   background: url(/SportFlow/assets/trainer2.png);
    background-position: center;
    background-position-x: left;
    background-size: contain;
