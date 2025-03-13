@@ -17,6 +17,14 @@ public abstract   class User {
         this.userId = userId;
     }
 
+    public User(String userName, String email, int mobile, String password, String role) {
+        this.userName = userName;
+        this.email = email;
+        this.mobile = mobile;
+        this.password = password;
+        this.role = role;
+    }
+
     public User() {
     }
 

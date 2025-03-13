@@ -16,7 +16,7 @@ public class UserDaoImp implements Dao.UserDao {
 private Connection con= DBConnection.getConnection();
     @Override
     public int addUser(User user) {
-        String add="insert into user(username,email,phone,password) values(?,?,?,?)";
+        String add="insert into user(username,email,mobile,password) values(?,?,?,?)";
      try(PreparedStatement ps=con.prepareStatement(add, Statement.RETURN_GENERATED_KEYS)){
 
          if(user!=null){

@@ -1,5 +1,8 @@
 package Controller;
 
+import Dao.impl.UserDaoImp;
+import Model.Member;
+import Model.User;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
@@ -9,20 +12,25 @@ import jakarta.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
 
-@WebServlet("Register")
+@WebServlet("/Register")
 public class RegisterServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        super.doPost(req, resp);
+        String username = req.getParameter("username");
+        String email = req.getParameter("email");
+        String mobile=req.getParameter("number");
+        String password = req.getParameter("password");
+
+        Member member = new Member();
+        UserDaoImp dao = new UserDaoImp();
+        User user= new Member(username,email,Integer.parseInt(mobile),password,member.getRole());
+        if (dao.addUser(user)!=0){
+            resp.sendRedirect(req.getContextPath()+"/Classes.jsp");
+        }
     }
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        String username = req.getParameter("username");
-        String email = req.getParameter("email");
-        String mobile=req.getParameter("mobile");
-        String password = req.getParameter("password");
-
 
 
     }

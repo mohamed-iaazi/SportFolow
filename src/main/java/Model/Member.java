@@ -8,11 +8,9 @@ public class Member extends User {
     private  String sport;
     private Date birthday_date;
 
-
-    public Member(int userId, String userName, String email, int mobile, String password, String role) {
-        super(userId, userName, email, mobile, password, role);
+    public Member(String userName, String email, int mobile, String password, String role) {
+        super(userName, email, mobile, password, role);
     }
-
 
     public Member() {
     }

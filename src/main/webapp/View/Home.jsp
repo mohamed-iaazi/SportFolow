@@ -311,6 +311,7 @@
             <div class="card px-1 py-4">
                 <div class="card-body">
                     <h6 class="information mt-4">Please provide following information</h6>
+                    <form method="POST" action="Register">
                     <div class="row">
                         <div class="col-sm-12">
                             <div class="form-group">
@@ -320,7 +321,7 @@
                     <div class="row">
                         <div class="col-sm-12">
                             <div class="form-group">
-                                <div class="input-group"> <input name="mobile" class="form-control" type="number" placeholder="Mobile"> </div>
+                                <div class="input-group"> <input name="number" class="form-control" type="number" placeholder="Mobile"> </div>
                             </div>
                         </div>
                     </div>
@@ -348,7 +349,8 @@
             </div>
             <div class="modal-footer">
                 <button type="button"  class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                <button  type="button" id="register_btn"  >Register</button>
+                    <input type="submit"  class="btn btn-success" value="Register">
+                </form>
             </div>
         </div>
     </div>
