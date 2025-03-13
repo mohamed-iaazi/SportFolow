@@ -1,7 +1,9 @@
 package Dao.impl;
 
+import Model.Member;
 import Model.User;
 import Util.DBConnection;
+import Util.PasswordUtils;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -16,6 +18,16 @@ private Connection con= DBConnection.getConnection();
     public int addUser(User user) {
         String add="insert into user(username,email,phone,password) values(?,?,?,?)";
      try(PreparedStatement ps=con.prepareStatement(add, Statement.RETURN_GENERATED_KEYS)){
+
+         if(user!=null){
+             Member member= (Member) user;
+             ps.setString(1, user.getUserName());
+             ps.setString(2, user.getEmail());
+             ps.setInt(3,member.getMobile());
+             ps.setString(4, PasswordUtils.encryptPassword(user.getPassword()));
+             ps.executeUpdate();
+         }
+
 
      } catch (Exception e) {
          throw new RuntimeException(e);
