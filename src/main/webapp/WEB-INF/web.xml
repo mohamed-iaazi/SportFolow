@@ -18,7 +18,18 @@
     <error-code>404</error-code>
     <location>/View/404.jsp</location>
   </error-page>
+  <error-page>
+    <error-code>403</error-code>
+    <location>/View/404.jsp</location>
+  </error-page>
   <welcome-file-list>
     <welcome-file>Home</welcome-file>
   </welcome-file-list>
+  <security-constraint>
+    <web-resource-collection>
+      <web-resource-name>Jsp</web-resource-name>
+      <url-pattern>*.jsp</url-pattern>
+    </web-resource-collection>
+    <auth-constraint></auth-constraint>
+  </security-constraint>
 </web-app>

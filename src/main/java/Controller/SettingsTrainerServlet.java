@@ -19,7 +19,7 @@ public class SettingsTrainerServlet extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        RequestDispatcher requestDispatcher = req.getRequestDispatcher("/View/TrainerSettings.jsp");
+        RequestDispatcher requestDispatcher = req.getRequestDispatcher("/View/Trainer/TrainerSettings.jsp");
         requestDispatcher.forward(req, resp);
     }
 }

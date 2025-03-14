@@ -50,7 +50,7 @@
             <span class="notification p-relative">
               <i class="fa-regular fa-bell fa-lg"></i>
             </span>
-                <img decoding="async" src="imgs/avatar.png" alt="" />
+                <img decoding="async" src="assets/avatar.png" alt="" />
             </div>
         </div>
 
