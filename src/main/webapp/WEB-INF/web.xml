@@ -10,6 +10,8 @@
     <url-pattern>/assets/*</url-pattern>
     <url-pattern>/css/*</url-pattern>
     <url-pattern>/js/*</url-pattern>
+    <url-pattern>/webfonts/*</url-pattern>
+
   </servlet-mapping>
   
   <error-page>

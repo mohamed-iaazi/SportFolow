@@ -23,9 +23,13 @@
 <header class="mb-4" style="z-index:999; overflow: hidden;  ">
     <nav class="navbar fixed-top navbar-expand-lg navbar-light bg-light p-2 ">
         <div class="container-fluid p-2">
-            <button onclick="history.back()" style="border: none; background: none; cursor: pointer; font-size: 16px; color: black">
+            <a href="/Home/" style="text-decoration: none;">
+                <button  style="border: none; background: none; cursor: pointer; font-size: 16px; color: black">
                 <i class="fas fa-arrow-left"></i> Back
             </button>
+
+            </a>
+
         </div>
     </nav>
 </header>
