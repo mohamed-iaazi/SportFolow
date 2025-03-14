@@ -369,6 +369,8 @@
 
 <!-- Modal -->
 <div class="modal fade" id="Login" tabindex="-1" aria-labelledby="LoginModal" aria-hidden="true">
+    <form action="Login" method="Post">
+
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
@@ -381,7 +383,7 @@
                     <div class="row">
                         <div class="col-sm-12">
                             <div class="form-group">
-                                <div class="input-group"> <input class="form-control" type="email" placeholder="Email "> </div>
+                                <div class="input-group"> <input name="email" class="form-control" type="email" placeholder="Email "> </div>
                             </div>
                         </div>
                     </div>
@@ -389,18 +391,19 @@
                     <div class="row">
                         <div class="col-sm-12">
                             <div class="form-group">
-                                <div class="input-group"> <input class="form-control" type="password" placeholder="Password"> </div>
+                                <div class="input-group"> <input name="password" class="form-control" type="password" placeholder="Password"> </div>
                             </div>
                         </div>
                     </div>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                    <button type="button" class="btn-primary">Login</button>
+                    <button type="submit" class="btn-primary">Login</button>
                 </div>
             </div>
         </div>
     </div>
+    </form>
 </div>
 
 

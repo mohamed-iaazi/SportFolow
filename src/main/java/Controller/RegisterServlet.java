@@ -3,7 +3,7 @@ package Controller;
 import Dao.impl.UserDaoImp;
 import Model.Member;
 import Model.User;
-import jakarta.servlet.DispatcherType;
+import Service.impl.UserServiceImp;
 import jakarta.servlet.RequestDispatcher;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
@@ -11,7 +11,6 @@ import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.HttpSession;
-
 import java.io.IOException;
 
 
@@ -25,11 +24,11 @@ public class RegisterServlet extends HttpServlet {
         String password = req.getParameter("password");
 
         Member member = new Member();
-        UserDaoImp dao = new UserDaoImp();
+        UserServiceImp userServiceImp = new UserServiceImp();
         User user= new Member(username,email,Integer.parseInt(mobile),password,member.getRole());
-        if (dao.addUser(user)!=0){
+        if (userServiceImp.addUser(user)!=0){
             HttpSession session = req.getSession();
-            session.setAttribute("user",dao.addUser(user));
+            session.setAttribute("user",userServiceImp.addUser(user));
             session.setAttribute("role",member.getRole());
             System.out.println("class");
             resp.sendRedirect(req.getContextPath()+"/Classes");
@@ -43,7 +42,7 @@ public class RegisterServlet extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        RequestDispatcher dispatcher= getServletContext().getRequestDispatcher("/Classes.jsp");
+        RequestDispatcher dispatcher= getServletContext().getRequestDispatcher("/View/Classes.jsp");
         dispatcher.forward(req,resp);
     }
 }

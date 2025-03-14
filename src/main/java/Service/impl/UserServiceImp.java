@@ -10,14 +10,15 @@ public class UserServiceImp implements Service.UserService {
     private final UserDao userDao=new UserDaoImp();
 
     @Override
-    public void addUser(User user) {
-        userDao.addUser(user);
+    public int addUser(User user) {
+        return userDao.addUser(user);
     }
 
     @Override
-    public User getUserById(int id) {
-        return userDao.getUserById(id);
+    public User getUserByEmail(String email) {
+         return userDao.getUserByEmail(email);
     }
+
 
     @Override
     public List<User> getAllUsers() {

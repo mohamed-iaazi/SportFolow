@@ -1,5 +1,6 @@
 package Dao.impl;
 
+import Dao.UserDao;
 import Model.Member;
 import Model.User;
 import Util.DBConnection;
@@ -12,7 +13,7 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 
-public class UserDaoImp implements Dao.UserDao {
+public class UserDaoImp implements UserDao {
 
 private Connection con= DBConnection.getConnection();
     @Override
@@ -43,11 +44,18 @@ private Connection con= DBConnection.getConnection();
     }
 
     @Override
-    public User getUserById(int id) {
-
-        String foundById="select  * from user where id=?";
+    public User getUserByEmail(String email) {
+        User user = new Member();
+        String foundById="select  * from user where email=?";
         try(PreparedStatement ps=con.prepareStatement(foundById)){
-
+           ps.setString(1, email);
+            ResultSet rs=ps.executeQuery();
+            if(rs.next()){
+                user.setPassword(rs.getString("password"));
+                user.setEmail(email);
+                System.out.println(rs.getString("password")+"in the dao");
+                return  user ;
+            }
         } catch (Exception e) {
             throw new RuntimeException(e);
         }
@@ -63,8 +71,9 @@ private Connection con= DBConnection.getConnection();
         } catch (Exception e) {
             throw new RuntimeException(e);
         }
-        return users;
-    }
+        return users;    }
+
+
 
     @Override
     public boolean updateUser(User user) {
