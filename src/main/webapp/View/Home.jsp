@@ -7,7 +7,6 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<%@page import="jakarta.servlet.*" %>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -299,7 +298,6 @@
         </div>
     </div>
 </section>
-
 <!--The Register Form -->
 <!-- Modal -->
 <div  class="modal fade" id="Register" tabindex="-1" aria-labelledby="RegisterModal" aria-hidden="true">

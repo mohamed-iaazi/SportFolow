@@ -11,14 +11,12 @@
     <url-pattern>/css/*</url-pattern>
     <url-pattern>/js/*</url-pattern>
   </servlet-mapping>
-
+  
   <error-page>
     <error-code>404</error-code>
     <location>/View/404.jsp</location>
   </error-page>
-  
   <welcome-file-list>
-    <welcome-file>View/Register.jsp</welcome-file>
+    <welcome-file>Home</welcome-file>
   </welcome-file-list>
-
 </web-app>

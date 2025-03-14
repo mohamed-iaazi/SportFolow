@@ -1,3 +1,4 @@
+<%@ page session="false" %>
 <%--
   Created by IntelliJ IDEA.
   User: iaazi
@@ -13,7 +14,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Classes</title>
     <link href="css/bootstrap.min.css" rel="stylesheet" >
-    <link href="css/card.css" rel="stylesheet" >
+
     <link href="css/style.css" rel="stylesheet" >
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
 </head>

@@ -14,7 +14,7 @@ import jakarta.servlet.http.HttpSession;
 import java.io.IOException;
 
 
-@WebServlet("/Register")
+@WebServlet({"/Register" ,"/Register.jsp"})
 public class RegisterServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
@@ -35,14 +35,14 @@ public class RegisterServlet extends HttpServlet {
         }
         else {
            req.setAttribute("errour" , "Erreur");
-           resp.sendRedirect(req.getContextPath()+"/");
+           resp.sendRedirect(req.getContextPath()+"/Register");
         }
 
     }
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        RequestDispatcher dispatcher= getServletContext().getRequestDispatcher("/View/Classes.jsp");
-        dispatcher.forward(req,resp);
+        RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/View/Register.jsp");
+        dispatcher.forward(req, resp);
     }
 }

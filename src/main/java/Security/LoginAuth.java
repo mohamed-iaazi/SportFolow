@@ -10,28 +10,20 @@ import java.io.IOException;
 
 
 
-@WebFilter(urlPatterns = {
-        "/Classes",
-        "/Classes.jsp",
-        "/Trainer",
-        "/Trainer.jsp",
-        "/Dashboard",
-        "/Dashboard.jsp"
-
-})
+@WebFilter({"/Classes.jsp", "/Classes"})
 public class LoginAuth implements Filter {
     @Override
     public void doFilter(ServletRequest servletRequest, ServletResponse servletResponse, FilterChain filterChain) throws IOException, ServletException {
-        HttpServletResponse response = (HttpServletResponse) servletResponse;
         HttpServletRequest request = (HttpServletRequest) servletRequest;
+        HttpServletResponse response = (HttpServletResponse) servletResponse;
+
+        // Get existing session without creating a new one
         HttpSession session = request.getSession(false);
-        if (session == null) {
 
-            response.sendRedirect(request.getContextPath()+"/");
+        if (session != null && session.getAttribute("user") != null) {
+            filterChain.doFilter(servletRequest, servletResponse); // Allow access
+        } else {
+            response.sendRedirect(request.getContextPath()+"/Login"); // Redirect to login if unauthorized
         }
-      else if (session!=null){
-          filterChain.doFilter(servletRequest, servletResponse);
-
-      }
     }
 }

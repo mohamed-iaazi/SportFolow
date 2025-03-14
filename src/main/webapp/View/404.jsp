@@ -25,7 +25,7 @@
             <button class="px-4 py-3 border rounded-md border-gray-950">
                 Signale a problem
             </button>
-            <a href="/SportFlow/" class="flex items-center gap-2 text-blue-600">
+            <a href="/SportFlow" class="flex items-center gap-2 text-blue-600">
             <span class="inline-block w-4 h-4">
               <svg
                       xmlns="http://www.w3.org/2000/svg"
