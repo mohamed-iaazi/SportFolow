@@ -13,11 +13,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Settings</title>
-    <link rel="stylesheet" href="css/all.min.css" />
-    <link rel="stylesheet" href="css/framework.css" />
-    <link rel="stylesheet" href="css/master.css" />
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/css/all.min.css" />
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/css/framework.css" />
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/css/master.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="${pageContext.request.contextPath}/assets/favicon.ico" type="image/x-icon" rel="icon" />
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;500&#038;display=swap" rel="stylesheet" />
 </head>
 <body>
@@ -50,7 +51,7 @@
             <span class="notification p-relative">
               <i class="fa-regular fa-bell fa-lg"></i>
             </span>
-                <img decoding="async" src="assets/avatar.png" alt="" />
+                <img decoding="async" src="${pageContext.request.contextPath}/assets/avatar.png" alt="" />
             </div>
         </div>
 

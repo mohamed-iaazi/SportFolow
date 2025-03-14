@@ -2,7 +2,7 @@
   Created by IntelliJ IDEA.
   User: iaazi
   Date: 14/03/2025
-  Time: 18:44
+  Time: 19:37
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
@@ -12,7 +12,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Sport-Dashboard</title>
+    <title>Sport-Classes</title>
     <link rel="stylesheet" href="${pageContext.request.contextPath}/css/all.min.css" />
     <link rel="stylesheet" href="${pageContext.request.contextPath}/css/framework.css" />
     <link rel="stylesheet" href="${pageContext.request.contextPath}/css/master.css" />
@@ -27,13 +27,13 @@
         <h3 class="p-relative txt-c mt-0">Sport Admin</h3>
         <ul>
             <li>
-                <a class="active d-flex align-center fs-14 c-black rad-6 p-10" href="Dashboard">
+                <a class=" d-flex align-center fs-14 c-black rad-6 p-10" href="Dashboard">
                     <i class="fa-regular fa-chart-bar fa-fw"></i>
                     <span>Dashboard</span>
                 </a>
             </li>
             <li>
-                <a class="d-flex align-center fs-14 c-black rad-6 p-10" href="classes">
+                <a class="active d-flex align-center fs-14 c-black rad-6 p-10" href="classes">
                     <i class="fa-solid fa-gear fa-fw"></i>
                     <span>Classes</span>
                 </a>

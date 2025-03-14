@@ -13,9 +13,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home-Sport</title>
-    <link href="css/bootstrap.min.css" rel="stylesheet" >
-    <link href="css/card.css" rel="stylesheet" >
-    <link href="css/style.css" rel="stylesheet" >
+    <link href="${pageContext.request.contextPath}/css/bootstrap.min.css" rel="stylesheet" >
+    <link href="${pageContext.request.contextPath}/css/card.css" rel="stylesheet" >
+    <link href="${pageContext.request.contextPath}/css/style.css" rel="stylesheet" >
+    <link href="${pageContext.request.contextPath}/assets/favicon.ico" type="image/x-icon" rel="icon" />
+
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
 </head>
@@ -84,7 +86,7 @@
         <div class="col-sm-10 col-lg-3">
             <div class="cards first">
                 <div class="imgBx">
-                    <img src="/SportFlow/assets/gym.png">
+                    <img src="${pageContext.request.contextPath}/assets/gym.png">
                 </div>
                 <div class="contentBx">
                     <h2>Football</h2>
@@ -106,7 +108,7 @@
         <div class=" col-sm-10 col-lg-3">
             <div class="cards second">
                 <div class="imgBx">
-                    <img src="/SportFlow/assets/gym.png">
+                    <img src="${pageContext.request.contextPath}/assets/gym.png">
                 </div>
                 <div class="contentBx">
                     <h2>Wellness Coach</h2>
@@ -127,7 +129,7 @@
         <div class=" col-sm-10 col-lg-3">
             <div class="cards thre">
                 <div class="imgBx">
-                    <img src="/SportFlow/assets/gym.png">
+                    <img src="${pageContext.request.contextPath}/assets/gym.png">
                 </div>
                 <div class="contentBx">
                     <h2>Fitness</h2>

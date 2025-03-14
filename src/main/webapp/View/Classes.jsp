@@ -12,9 +12,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Classes</title>
-    <link href="css/bootstrap.min.css" rel="stylesheet" >
-    <link href="css/card.css" rel="stylesheet" >
-    <link href="css/style.css" rel="stylesheet" >
+    <link href="${pageContext.request.contextPath}/css/bootstrap.min.css" rel="stylesheet" >
+    <link href="${pageContext.request.contextPath}/css/card.css" rel="stylesheet" >
+    <link href="${pageContext.request.contextPath}/css/style.css" rel="stylesheet" >
+    <link href="${pageContext.request.contextPath}/assets/favicon.ico" type="image/x-icon" rel="icon" />
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
 </head>
 <body>
@@ -44,7 +46,7 @@
         <div class="col-sm-10 col-lg-3">
             <div class="cards first">
                 <div class="imgBx">
-                    <img src="/SportFlow/assets/gym.png">
+                    <img src="${pageContext.request.contextPath}/assets/gym.png">
                 </div>
                 <div class="contentBx">
                     <h2>Football</h2>
@@ -66,7 +68,7 @@
         <div class=" col-sm-10 col-lg-3">
             <div class="cards second">
                 <div class="imgBx">
-                    <img src="/SportFlow/assets/gym.png">
+                    <img src="${pageContext.request.contextPath}/assets/gym.png">
                 </div>
                 <div class="contentBx">
                     <h2>Wellness Coach</h2>
@@ -87,7 +89,7 @@
         <div class=" col-sm-10 col-lg-3">
             <div class="cards thre">
                 <div class="imgBx">
-                    <img src="/SportFlow/assets/gym.png">
+                    <img src="${pageContext.request.contextPath}/assets/gym.png">
                 </div>
                 <div class="contentBx">
                     <h2>Fitness</h2>
@@ -108,75 +110,6 @@
 
 
 
-<!--   classes section -->
-
-<section class="classes pb-5">
-    <!--   Card for class One  -->
-    <div class=" row row-cols-1 row-cols-md-3 g-4 mt-5 m-4 justify-content-center">
-        <div class="col-sm-10 col-lg-3">
-            <div class="cards first">
-                <div class="imgBx">
-                    <img src="/SportFlow/assets/gym.png">
-                </div>
-                <div class="contentBx">
-                    <h2>Football</h2>
-                    <div class="size mt-3">
-                        <h3>Mambers :</h3>
-                        <span>0</span>
-                        <span>5</span>
-                        <span>0</span>
-                        <span>0</span>
-                    </div>
-                    <button class="btn-success " href="#">Join Now</button>
-                </div>
-            </div>
-
-        </div>
-
-        <!--   Card for class two  -->
-
-        <div class=" col-sm-10 col-lg-3">
-            <div class="cards second">
-                <div class="imgBx">
-                    <img src="/SportFlow/assets/gym.png">
-                </div>
-                <div class="contentBx">
-                    <h2>Wellness Coach</h2>
-                    <div class="size mt-3">
-                        <h3>Mambers :</h3>
-                        <span>0</span>
-                        <span>0</span>
-                        <span>6</span>
-                        <span>0</span>
-                    </div>
-                    <button class="btn-danger" href="#">Join Now</button>
-                </div>
-            </div>
-
-        </div>
-        <!--   Card for class thre  -->
-
-        <div class=" col-sm-10 col-lg-3">
-            <div class="cards thre">
-                <div class="imgBx">
-                    <img src="/SportFlow/assets/gym.png">
-                </div>
-                <div class="contentBx">
-                    <h2>Fitness</h2>
-                    <div class="size mt-3">
-                        <h3>Mambers :</h3>
-                        <span>0</span>
-                        <span>2</span>
-                        <span>8</span>
-                        <span>8</span>
-                    </div>
-                    <button class="btn-info " href="#">Join Now</button>
-                </div>
-            </div>
-
-        </div>
-    </div>
-</section>
 
 <!-- START Pagination -->
 <div aria-label="Page navigation p-5">
@@ -202,6 +135,6 @@
 </div>
 </div>
 <script src="https://unpkg.com/@dotlottie/player-component@2.7.12/dist/dotlottie-player.mjs" type="module"></script>
-<script src="js/bootstrap.min.js"></script>
+<script src="${pageContext.request.contextPath}/js/bootstrap.min.js"></script>
 </body>
 </html>

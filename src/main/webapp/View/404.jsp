@@ -7,6 +7,7 @@
     <meta charset="UTF-8">
     <title>404</title>
     <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
+    <link href="${pageContext.request.contextPath}/assets/favicon.ico" type="image/x-icon" rel="icon" />
 
 </head>
 <body>
