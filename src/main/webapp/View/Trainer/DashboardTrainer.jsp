@@ -16,7 +16,6 @@
     <link rel="stylesheet" href="${pageContext.request.contextPath}/css/all.min.css" />
     <link rel="stylesheet" href="${pageContext.request.contextPath}/css/framework.css" />
     <link rel="stylesheet" href="${pageContext.request.contextPath}/css/master.css" />
-    <link href="${pageContext.request.contextPath}/css/bootstrap.min.css" rel="stylesheet" >
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -84,8 +83,8 @@
                 <form action="${pageContext.request.contextPath}/DashboardTrainer/addClass" method="post">
                     <input name="title" class="d-block mb-20 w-full p-10 b-none bg-eee rad-6" type="text" placeholder="Title" />
                     <textarea name="description" class="d-block mb-20 w-full p-10 b-none bg-eee rad-6" placeholder="description "></textarea>
-                    <label class="d-block text-secondary"> Data To start The class</label>
-                    <input name="date" class="text-bg-light border-0 ps-2 pe-2 pt-1 pb-1" type="datetime-local" placeholder="Date" />
+                    <label class="mt-0 mb-20 c-grey fs-15"> Data To start The class</label>
+                    <input name="date" class="d-block mb-20 w-full p-10 b-none bg-eee rad-6" type="datetime-local" placeholder="Date" />
 
                     <input class="save d-block fs-14 bg-blue c-white b-none w-fit btn-shape" type="submit" value="Add" />
                 </form>
@@ -140,5 +139,4 @@
     </div>
 </div>
 </body>
-<script src="${pageContext.request.contextPath}/js/bootstrap.min.js"></script>
 </html>

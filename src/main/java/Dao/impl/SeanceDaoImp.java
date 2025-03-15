@@ -3,6 +3,7 @@ package Dao.impl;
 import Dao.SeanceDao;
 import Model.Seance;
 import Util.DBConnection;
+import jakarta.servlet.http.HttpSession;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -17,7 +18,6 @@ public class SeanceDaoImp implements SeanceDao {
     @Override
     public boolean addclass(Seance seance) {
         String INSERT_SEANCE = "insert into seance (title , description , date ,idTrainer) values (?,?,?,?)";
-
         try (Connection connection = DBConnection.getConnection();
              PreparedStatement preparedStatement = connection.prepareStatement(INSERT_SEANCE)) {
             preparedStatement.setString(1, seance.getTitle());

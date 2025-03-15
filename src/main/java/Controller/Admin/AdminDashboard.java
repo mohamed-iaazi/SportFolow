@@ -28,7 +28,12 @@ public class AdminDashboard extends HttpServlet {
             case "/addTrainer":
                 Trainer trainer=new Trainer(username,email,000,password,"trainer",spesialisation);
                 UserServiceImp userServiceImp=new UserServiceImp();
-                userServiceImp.addUser(trainer);
+                if (userServiceImp.addUser(trainer)!=0){
+                     resp.sendRedirect(req.getContextPath()+"/Admin/Dashboard");
+                }
+                else {
+                    resp.sendRedirect(req.getContextPath()+"/Admin/trainer");
+                }
                 break;
                         default:
                             dispatch(req, resp,"/View/Error.jsp");
@@ -56,6 +61,9 @@ public class AdminDashboard extends HttpServlet {
                 case "/member":
                     dispatch(req, resp,"/View/Admin/Member.jsp");
                     break;
+            case "/AddAdmin":
+                dispatch(req, resp,"/View/Admin/AddAdmin.jsp");
+                break;
                     case "/classes":
                         dispatch(req, resp,"/View/Admin/Classes.jsp");
                         break;

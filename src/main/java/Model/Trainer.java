@@ -6,7 +6,7 @@ public class Trainer extends User {
     private int userId;
 
     public Trainer(String userName, String email, int mobile, String password, String role, String spesialisation) {
-        super(userName, email, mobile, password, "Trainer");
+        super(userName, email, mobile, password, role);
         this.spesialisation = spesialisation;
 
     }

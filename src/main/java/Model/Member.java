@@ -49,7 +49,5 @@ public class Member extends User {
         this.birthday_date = birthday_date;
     }
 
-  public String getRole(){
-        return "member";
-  }
+
 }

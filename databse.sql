@@ -7,7 +7,8 @@ create table user (
                       username varchar(100) ,
                       email varchar (100) ,
                       password varchar(100),
-                      mobile int
+                      mobile int,
+                      role varchar(60)
 );
 
 
@@ -24,7 +25,7 @@ create table seance (
                         description varchar (100) ,
                         date varchar(100),
                         idTrainer int ,
-                        foreign key (idTrainer) references trainer(id)
+                        foreign key (idTrainer) references trainer(idUser)
 );
 create table member (
                         id int primary key auto_increment ,

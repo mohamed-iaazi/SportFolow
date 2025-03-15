@@ -22,9 +22,10 @@ public class TrainerServlet extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        HttpSession session = req.getSession();
-        int trainerId = 1;
-        System.out.println("Trainr id  :"+trainerId);
+        HttpSession session = req.getSession(false);
+        Object id = session.getAttribute("user");
+        int userId = Integer.parseInt(id.toString());
+        System.out.println(userId+"id is");
         String title = req.getParameter("title");
         String description = req.getParameter("description");
         LocalDateTime Date = LocalDateTime.parse(req.getParameter("date"));
@@ -32,9 +33,11 @@ public class TrainerServlet extends HttpServlet {
         String path = req.getPathInfo();
         SeanceServiceImp seanceServiceImp = new SeanceServiceImp();
 
+
+
         switch (path){
             case "/addClass":
-                Seance seance=new Seance(title,description,Date,trainerId);
+                Seance seance=new Seance(title,description,Date,userId);
                 if ( seanceServiceImp.addclass(seance)){
                     req.getRequestDispatcher("/View/Trainer/DashboardTrainer.jsp").forward(req, resp);
                 }

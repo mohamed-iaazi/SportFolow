@@ -10,7 +10,7 @@ import java.io.IOException;
 
 
 
-@WebFilter({"/Classes.jsp", "/Classes"})
+@WebFilter({ "/Classes"})
 public class LoginAuth implements Filter {
     @Override
     public void doFilter(ServletRequest servletRequest, ServletResponse servletResponse, FilterChain filterChain) throws IOException, ServletException {
@@ -21,7 +21,8 @@ public class LoginAuth implements Filter {
         HttpSession session = request.getSession(false);
 
         if (session != null && session.getAttribute("user") != null) {
-            filterChain.doFilter(servletRequest, servletResponse); // Allow access
+            filterChain.doFilter(servletRequest, servletResponse);
+            // Allow access
         } else {
             response.sendRedirect(request.getContextPath()+"/Login"); // Redirect to login if unauthorized
         }

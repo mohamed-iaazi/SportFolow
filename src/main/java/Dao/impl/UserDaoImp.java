@@ -19,8 +19,8 @@ public class UserDaoImp implements UserDao {
 private Connection con= DBConnection.getConnection();
     @Override
     public int addUser(User user) {
-        String adduser="insert into user(username,email,mobile,password) values(?,?,?,?)";
-        String addtrainer="insert into trainer (spesialisation,userId) values(?,?)";
+        String adduser="insert into user(username,email,mobile,password,role) values(?,?,?,?,?)";
+        String addtrainer="insert into trainer (spesialisation,idUser) values(?,?)";
         String addmember="insert into member (userId) values(?)";
 
 
@@ -33,6 +33,7 @@ private Connection con= DBConnection.getConnection();
              ps.setString(2, user.getEmail());
              ps.setInt(3,user.getMobile());
              ps.setString(4, PasswordUtils.encryptPassword(user.getPassword()));
+             ps.setString(5, user.getRole());
              ps.executeUpdate();
              ResultSet rs = ps.getGeneratedKeys();
              if (rs.next()) {
@@ -43,10 +44,11 @@ private Connection con= DBConnection.getConnection();
                      preparedStatementTrainer.setInt(2, id);
                      preparedStatementTrainer.executeUpdate();
 
-                 }
-                 else {
+                 } else if (user.getRole().equals("admin")) {
+                     System.out.println("this is admin");
 
-                     Member member= (Member) user;
+                 } else {
+                     System.out.println(user.getRole());
                      preparedStatementMember.setInt(1, id);
                      preparedStatementMember.executeUpdate();
                  }
@@ -71,7 +73,8 @@ private Connection con= DBConnection.getConnection();
             if(rs.next()){
                 user.setPassword(rs.getString("password"));
                 user.setEmail(email);
-                System.out.println(rs.getString("password")+"in the dao");
+                user.setRole(rs.getString("role"));
+                user.setUserId(rs.getInt("userId"));
                 return  user ;
             }
         } catch (Exception e) {
