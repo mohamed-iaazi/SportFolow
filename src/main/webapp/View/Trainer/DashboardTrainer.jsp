@@ -16,6 +16,8 @@
     <link rel="stylesheet" href="${pageContext.request.contextPath}/css/all.min.css" />
     <link rel="stylesheet" href="${pageContext.request.contextPath}/css/framework.css" />
     <link rel="stylesheet" href="${pageContext.request.contextPath}/css/master.css" />
+    <link href="${pageContext.request.contextPath}/css/bootstrap.min.css" rel="stylesheet" >
+
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="${pageContext.request.contextPath}/assets/favicon.ico" type="image/x-icon" rel="icon" />
@@ -68,7 +70,7 @@
                 </div>
                 <img decoding="async" src="${pageContext.request.contextPath}/assets/avatar.png" alt="" class="avatar" />
                 <div class="body txt-c d-flex p-20 mt-20 mb-20 block-mobile">
-                    <div>Classes<span class="d-block c-grey fs-14 mt-10">Fittness</span></div>
+                    <div>Total Classes<span class="d-block c-grey fs-14 mt-10">10</span></div>
                     <div>Member Joined <span class="d-block c-grey fs-14 mt-10">80</span></div>
 
                 </div>
@@ -82,6 +84,9 @@
                 <form>
                     <input class="d-block mb-20 w-full p-10 b-none bg-eee rad-6" type="text" placeholder="Title" />
                     <textarea class="d-block mb-20 w-full p-10 b-none bg-eee rad-6" placeholder="description "></textarea>
+                    <label class="d-block text-secondary"> Data To start The class</label>
+                    <input class="text-bg-light border-0 ps-2 pe-2 pt-1 pb-1" type="datetime-local" >
+
                     <input class="save d-block fs-14 bg-blue c-white b-none w-fit btn-shape" type="submit" value="Add" />
                 </form>
             </div>
@@ -135,4 +140,5 @@
     </div>
 </div>
 </body>
+<script src="${pageContext.request.contextPath}/js/bootstrap.min.js"></script>
 </html>
