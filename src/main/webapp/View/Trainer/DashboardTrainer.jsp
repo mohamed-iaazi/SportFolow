@@ -81,11 +81,11 @@
             <div class="quick-draft p-20 bg-white rad-10">
                 <h2 class="mt-0 mb-10">Add new Class</h2>
                 <p class="mt-0 mb-20 c-grey fs-15">Title of class</p>
-                <form>
-                    <input class="d-block mb-20 w-full p-10 b-none bg-eee rad-6" type="text" placeholder="Title" />
-                    <textarea class="d-block mb-20 w-full p-10 b-none bg-eee rad-6" placeholder="description "></textarea>
+                <form action="${pageContext.request.contextPath}/DashboardTrainer/addClass" method="post">
+                    <input name="title" class="d-block mb-20 w-full p-10 b-none bg-eee rad-6" type="text" placeholder="Title" />
+                    <textarea name="description" class="d-block mb-20 w-full p-10 b-none bg-eee rad-6" placeholder="description "></textarea>
                     <label class="d-block text-secondary"> Data To start The class</label>
-                    <input class="text-bg-light border-0 ps-2 pe-2 pt-1 pb-1" type="datetime-local" >
+                    <input name="date" class="text-bg-light border-0 ps-2 pe-2 pt-1 pb-1" type="datetime-local" placeholder="Date" />
 
                     <input class="save d-block fs-14 bg-blue c-white b-none w-fit btn-shape" type="submit" value="Add" />
                 </form>

@@ -1,16 +1,16 @@
 package Model;
 
-import java.sql.Date;
-import java.sql.Time;
+import java.sql.Timestamp;
+import java.time.LocalDateTime;
 
 public class Seance {
     private String id;
     private String title;
     private String description;
-    private Date dateTime;
+    private LocalDateTime dateTime;
     private  int idTrainer ;
 
-    public Seance(String title, String description, Date dateTime, int idTrainer) {
+    public Seance(String title, String description, LocalDateTime dateTime, int idTrainer) {
         this.title = title;
         this.description = description;
         this.dateTime = dateTime;
@@ -41,12 +41,12 @@ public class Seance {
         this.description = description;
     }
 
-    public Date getDateTime() {
+    public LocalDateTime getDateTime() {
         return dateTime;
     }
 
-    public void setDateTime(Date dateTime) {
-        this.dateTime = dateTime;
+    public void setDateTime(Timestamp dateTime) {
+        this.dateTime = dateTime.toLocalDateTime();
     }
 
     public int getIdTrainer() {
