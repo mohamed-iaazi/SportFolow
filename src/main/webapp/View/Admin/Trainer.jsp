@@ -70,22 +70,21 @@
         </div>
         <!-- End Head -->
         <h1 class="p-relative">Dashboard</h1>
+
         <div class="wrapper d-grid gap-20">
             <!-- Start Welcome Widget -->
             <div class="welcome bg-white rad-10 txt-c-mobile block-mobile">
-                <div class="intro p-20 d-flex space-between bg-eee">
-                    <div>
-                        <h2 class="m-0">Welcome</h2>
-                        <p class="c-grey mt-5">Admin</p>
-                    </div>
-                    <img decoding="async" class="hide-mobile" src="${pageContext.request.contextPath}/assets/welcome.png" alt="" />
-                </div>
-                <img decoding="async" src="${pageContext.request.contextPath}/assets/avatar.png" alt="" class="avatar" />
+                <p style="display: block; margin-left: 20px" class="c-grey mt-15">Add Traineur</p>
                 <div class="body txt-c d-flex p-20 mt-20 mb-20 block-mobile">
-                    <div>Classes<span class="d-block c-grey fs-14 mt-10">10</span></div>
-                    <div>Member  <span class="d-block c-grey fs-14 mt-10">80</span></div>
-                    <div>Trainers  <span class="d-block c-grey fs-14 mt-10">8</span></div>
+                    <form action="${pageContext.request.contextPath}/Admin/addTrainer" class="w-full" method="post">
+                        <input name="username" class="d-block mb-20 w-full p-10 b-none bg-eee rad-6" type="text" placeholder="username" />
+                        <input name="spesialisation" class="d-block mb-20 w-full p-10 b-none bg-eee rad-6" type="text" placeholder="specialization" />
+                        <input type="email" name="email"  class="d-block mb-20 w-full p-10 b-none bg-eee rad-6"  placeholder="email" />
+                        <input type="password" name="password" class="d-block mb-20 w-full p-10 b-none bg-eee rad-6"  placeholder="password" />
 
+
+                        <input  class="save d-block fs-14 bg-blue c-white b-none w-fit btn-shape " style="display: block ; margin-left: auto ; margin-right: auto" type="submit" value="Add" />
+                    </form>
 
                 </div>
 
@@ -93,8 +92,11 @@
 
 
         </div>
-
     </div>
+
+
 </div>
+
+
 </body>
 </html>

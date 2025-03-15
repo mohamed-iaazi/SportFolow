@@ -2,26 +2,47 @@ package Dao.impl;
 
 import Dao.SeanceDao;
 import Model.Seance;
+import Util.DBConnection;
 
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
 public class SeanceDaoImp implements SeanceDao {
+
+
     @Override
-    public boolean addclass() {
+    public boolean addclass(Seance seance) {
+        String INSERT_SEANCE = "insert into seance (title , description , date ,idTrainer) values (?,?,?,?)";
+
+        try (Connection connection = DBConnection.getConnection();
+             PreparedStatement preparedStatement = connection.prepareStatement(INSERT_SEANCE)) {
+            preparedStatement.setString(1, seance.getTitle());
+            preparedStatement.setString(2, seance.getDescription());
+            preparedStatement.setString(3, seance.getDateTime().toString());
+            preparedStatement.setInt(4, seance.getIdTrainer());
+            preparedStatement.executeUpdate();
+            return true;
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+            return false;
+        }
+
+    }
+    @Override
+    public boolean deleteclass(Seance seance) {
         return false;
     }
 
     @Override
-    public boolean deleteclass(int id) {
+    public boolean updateclass(Seance seance) {
         return false;
     }
 
-    @Override
-    public boolean updateclass(int id, String name, String desc, LocalDateTime starttime) {
-        return false;
-    }
 
     @Override
     public List<Seance> displayALlClass() {

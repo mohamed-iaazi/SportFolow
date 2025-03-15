@@ -11,18 +11,18 @@ public class SeanceServiceImp implements SeanceService {
     private final SeanceDaoImp seanceDaoImp=new SeanceDaoImp();
 
     @Override
-    public boolean addclass() {
-        return seanceDaoImp.addclass();
+    public boolean addclass(Seance seance) {
+        return seanceDaoImp.addclass(seance);
     }
 
     @Override
-    public boolean deleteclass(int id) {
-        return seanceDaoImp.deleteclass(id);
+    public boolean deleteclass(Seance seance) {
+        return seanceDaoImp.deleteclass(seance);
     }
 
     @Override
-    public boolean updateclass(int id, String name, String desc, LocalDateTime starttime) {
-        return seanceDaoImp.updateclass(id, name, desc, starttime);
+    public boolean updateclass(Seance seance) {
+        return seanceDaoImp.updateclass(seance);
     }
 
     @Override

@@ -2,6 +2,7 @@ package Dao.impl;
 
 import Dao.UserDao;
 import Model.Member;
+import Model.Trainer;
 import Model.User;
 import Util.DBConnection;
 import Util.PasswordUtils;
@@ -18,20 +19,37 @@ public class UserDaoImp implements UserDao {
 private Connection con= DBConnection.getConnection();
     @Override
     public int addUser(User user) {
-        String add="insert into user(username,email,mobile,password) values(?,?,?,?)";
-     try(PreparedStatement ps=con.prepareStatement(add, Statement.RETURN_GENERATED_KEYS)){
+        String adduser="insert into user(username,email,mobile,password) values(?,?,?,?)";
+        String addtrainer="insert into trainer (spesialisation,userId) values(?,?)";
+        String addmember="insert into member (userId) values(?)";
+
+
+        try(PreparedStatement ps=con.prepareStatement(adduser, Statement.RETURN_GENERATED_KEYS);
+            PreparedStatement preparedStatementTrainer=con.prepareStatement(addtrainer);
+            PreparedStatement preparedStatementMember=con.prepareStatement(addmember);) {
 
          if(user!=null){
-             Member member= (Member) user;
              ps.setString(1, user.getUserName());
              ps.setString(2, user.getEmail());
-             ps.setInt(3,member.getMobile());
+             ps.setInt(3,user.getMobile());
              ps.setString(4, PasswordUtils.encryptPassword(user.getPassword()));
              ps.executeUpdate();
-
              ResultSet rs = ps.getGeneratedKeys();
              if (rs.next()) {
                  int id=rs.getInt(1);
+                 if (user.getRole().equals("trainer")) {
+                     Trainer trainer= (Trainer) user;
+                     preparedStatementTrainer.setString(1, trainer.getSpesialisation());
+                     preparedStatementTrainer.setInt(2, id);
+                     preparedStatementTrainer.executeUpdate();
+
+                 }
+                 else {
+
+                     Member member= (Member) user;
+                     preparedStatementMember.setInt(1, id);
+                     preparedStatementMember.executeUpdate();
+                 }
                  return id;
              }
          }

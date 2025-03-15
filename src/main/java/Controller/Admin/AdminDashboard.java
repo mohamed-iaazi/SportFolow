@@ -1,5 +1,7 @@
-package Controller;
+package Controller.Admin;
 
+import Model.Trainer;
+import Service.impl.UserServiceImp;
 import jakarta.servlet.RequestDispatcher;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
@@ -14,6 +16,28 @@ import java.io.IOException;
         "/Admin/*"
 })
 public class AdminDashboard extends HttpServlet {
+
+    @Override
+    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        String username = req.getParameter("username");
+        String email = req.getParameter("email");
+        String spesialisation=req.getParameter("spesialisation");
+        String password = req.getParameter("password");
+        String path = req.getPathInfo();
+        switch (path){
+            case "/addTrainer":
+                Trainer trainer=new Trainer(username,email,000,password,"trainer",spesialisation);
+                UserServiceImp userServiceImp=new UserServiceImp();
+                userServiceImp.addUser(trainer);
+                break;
+                        default:
+                            dispatch(req, resp,"/View/Error.jsp");
+                            break;
+
+        }
+
+    }
+
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         String path = req.getPathInfo();

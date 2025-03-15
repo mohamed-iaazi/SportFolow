@@ -1,4 +1,4 @@
-package Controller;
+package Controller.Trainer;
 
 import jakarta.servlet.RequestDispatcher;
 import jakarta.servlet.ServletException;
