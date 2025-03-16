@@ -7,10 +7,7 @@ import Model.User;
 import Util.DBConnection;
 import Util.PasswordUtils;
 
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.Statement;
+import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -94,6 +91,34 @@ private Connection con= DBConnection.getConnection();
         }
         return users;    }
 
+    @Override
+    public List<User> getAllUsersByRole(String role) {
+        List<User> users=new ArrayList<>();
+        String SELECT_ALL_USER="select * from user where role=?";
+        try (Connection connection=DBConnection.getConnection();
+             PreparedStatement preparedStatement= connection.prepareStatement(SELECT_ALL_USER)) {
+              preparedStatement.setString(1, role);
+              ResultSet rs=preparedStatement.executeQuery();
+              while (rs.next()){
+                  int userId = rs.getInt(1);
+                  String userName = rs.getString("userName");
+                  String roleName = rs.getString("role");
+                  System.out.println(userId);
+
+                      users.add(new User(userId, userName,role) {
+                      });
+
+
+
+              }
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+        for (User user : users) {
+            System.out.println(user.getUserId());
+        }
+        return users;
+    }
 
 
     @Override

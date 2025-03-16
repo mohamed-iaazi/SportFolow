@@ -6,6 +6,8 @@
   To change this template use File | Settings | File Templates.
 --%>
     <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib prefix="c" uri="jakarta.tags.core" %>
+
     <!DOCTYPE html>
     <html lang="en">
     <head>
@@ -16,6 +18,9 @@
         <link rel="stylesheet" href="${pageContext.request.contextPath}/css/all.min.css" />
         <link rel="stylesheet" href="${pageContext.request.contextPath}/css/framework.css" />
         <link rel="stylesheet" href="${pageContext.request.contextPath}/css/master.css" />
+
+
+        <link href="${pageContext.request.contextPath}/css/UserTable.css" rel="stylesheet">
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
         <link href="${pageContext.request.contextPath}/assets/favicon.ico" type="image/x-icon" rel="icon" />
@@ -83,16 +88,18 @@
                     <img decoding="async" src="${pageContext.request.contextPath}/assets/avatar.png" alt="" class="avatar" />
                     <div class="body txt-c d-flex p-20 mt-20 mb-20 block-mobile">
                         <div>Classes<span class="d-block c-grey fs-14 mt-10">10</span></div>
-                        <div>Member  <span class="d-block c-grey fs-14 mt-10">80</span></div>
-                        <div>Trainers  <span class="d-block c-grey fs-14 mt-10">8</span></div>
+                        <div>Member  <span class="d-block c-grey fs-14 mt-10">${UserList.size()}</span></div>
+                        <div>Trainers  <span class="d-block c-grey fs-14 mt-10">${trainers.size()}</span></div>
 
 
                     </div>
 
                 </div>
 
+                <%@include file="./../../componant/UserTable.jsp"%>
 
             </div>
+
 
         </div>
     </div>

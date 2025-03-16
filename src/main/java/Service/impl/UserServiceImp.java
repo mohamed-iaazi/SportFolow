@@ -26,6 +26,11 @@ public class UserServiceImp implements Service.UserService {
     }
 
     @Override
+    public List<User> getAllUsersByRole(String role) {
+        return userDao.getAllUsersByRole(role);
+    }
+
+    @Override
     public void updateUser(User user) {
       userDao.updateUser(user);
     }

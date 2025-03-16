@@ -83,8 +83,8 @@
                 <img decoding="async" src="${pageContext.request.contextPath}/assets/avatar.png" alt="" class="avatar" />
                 <div class="body txt-c d-flex p-20 mt-20 mb-20 block-mobile">
                     <div>Classes<span class="d-block c-grey fs-14 mt-10">10</span></div>
-                    <div>Member  <span class="d-block c-grey fs-14 mt-10">80</span></div>
-                    <div>Trainers  <span class="d-block c-grey fs-14 mt-10">8</span></div>
+                    <div>Member  <span class="d-block c-grey fs-14 mt-10">${member.size()}</span></div>
+                    <div>Trainers  <span class="d-block c-grey fs-14 mt-10">${trainers.size()}</span></div>
 
 
                 </div>

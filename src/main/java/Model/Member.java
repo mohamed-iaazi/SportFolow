@@ -12,6 +12,10 @@ public class Member extends User {
         super(userName, email, mobile, password, role);
     }
 
+    public Member(int userId, String userName,String role) {
+        super(userId, userName,role);
+    }
+
     public Member() {
     }
 

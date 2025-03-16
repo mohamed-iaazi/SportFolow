@@ -11,6 +11,10 @@ public class Trainer extends User {
 
     }
 
+    public Trainer(int userId, String userName,String role) {
+        super(userId, userName,role);
+    }
+
     public Trainer() {
     }
 

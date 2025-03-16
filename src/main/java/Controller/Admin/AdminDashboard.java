@@ -1,6 +1,7 @@
 package Controller.Admin;
 
 import Model.Trainer;
+import Model.User;
 import Service.impl.UserServiceImp;
 import jakarta.servlet.RequestDispatcher;
 import jakarta.servlet.ServletException;
@@ -10,6 +11,7 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 
 import java.io.IOException;
+import java.util.List;
 
 
 @WebServlet(urlPatterns = {
@@ -36,7 +38,7 @@ public class AdminDashboard extends HttpServlet {
                 }
                 break;
                         default:
-                            dispatch(req, resp,"/View/Error.jsp");
+                            dispatch(req, resp,"/View/Error.jsp","null");
                             break;
 
         }
@@ -53,29 +55,42 @@ public class AdminDashboard extends HttpServlet {
 
         switch (path) {
             case "/Dashboard":
-                dispatch(req, resp,"/View/Admin/Dashboard.jsp");
+                dispatch(req, resp,"/View/Admin/Dashboard.jsp","null");
                 break;
             case "/trainer":
-                dispatch(req, resp,"/View/Admin/Trainer.jsp");
+                dispatch(req, resp,"/View/Admin/Trainer.jsp","trainer");
+
                 break;
                 case "/member":
-                    dispatch(req, resp,"/View/Admin/Member.jsp");
+                    dispatch(req, resp,"/View/Admin/Member.jsp","member");
                     break;
             case "/AddAdmin":
-                dispatch(req, resp,"/View/Admin/AddAdmin.jsp");
+                dispatch(req, resp,"/View/Admin/AddAdmin.jsp","admin");
+
                 break;
                     case "/classes":
-                        dispatch(req, resp,"/View/Admin/Classes.jsp");
+                        dispatch(req, resp,"/View/Admin/Classes.jsp","classes");
                         break;
                         default:
-                            dispatch(req, resp,"/View/Error.jsp");
+                            dispatch(req, resp,"/View/Error.jsp","null");
                             break;
 
 
         }
 
     }
-    public void dispatch(HttpServletRequest req, HttpServletResponse resp,String path) throws ServletException, IOException {
+    public void dispatch(HttpServletRequest req, HttpServletResponse resp,String path,String role) throws ServletException, IOException {
+        UserServiceImp userServiceImp=new UserServiceImp();
+
+        List<User> UserList= userServiceImp.getAllUsersByRole(role);
+        req.setAttribute("UserList",UserList);
+
+        List<User> trainers= userServiceImp.getAllUsersByRole("trainer");
+        req.setAttribute("trainers",trainers);
+
+        List<User> member= userServiceImp.getAllUsersByRole("member");
+        req.setAttribute("member",member);
+
         RequestDispatcher dispatcher=req.getRequestDispatcher(path);
         dispatcher.forward(req,resp);
     }

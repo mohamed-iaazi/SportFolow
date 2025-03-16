@@ -16,6 +16,8 @@
     <link rel="stylesheet" href="${pageContext.request.contextPath}/css/all.min.css" />
     <link rel="stylesheet" href="${pageContext.request.contextPath}/css/framework.css" />
     <link rel="stylesheet" href="${pageContext.request.contextPath}/css/master.css" />
+    <link href="${pageContext.request.contextPath}/css/UserTable.css" rel="stylesheet">
+    
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="${pageContext.request.contextPath}/assets/favicon.ico" type="image/x-icon" rel="icon" />
@@ -81,14 +83,16 @@
                         <input name="spesialisation" class="d-block mb-20 w-full p-10 b-none bg-eee rad-6" type="text" placeholder="specialization" />
                         <input type="email" name="email"  class="d-block mb-20 w-full p-10 b-none bg-eee rad-6"  placeholder="email" />
                         <input type="password" name="password" class="d-block mb-20 w-full p-10 b-none bg-eee rad-6"  placeholder="password" />
-
-
                         <input  class="save d-block fs-14 bg-blue c-white b-none w-fit btn-shape " style="display: block ; margin-left: auto ; margin-right: auto" type="submit" value="Add" />
                     </form>
 
                 </div>
 
             </div>
+
+            
+            
+            <%@include file="./../../componant/UserTable.jsp"%>
 
 
         </div>
@@ -97,6 +101,6 @@
 
 </div>
 
-
+<script src="${pageContext.request.contextPath}/js/bootstrap.min.js"></script>
 </body>
 </html>

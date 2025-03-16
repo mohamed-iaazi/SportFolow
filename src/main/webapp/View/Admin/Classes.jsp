@@ -16,6 +16,8 @@
     <link rel="stylesheet" href="${pageContext.request.contextPath}/css/all.min.css" />
     <link rel="stylesheet" href="${pageContext.request.contextPath}/css/framework.css" />
     <link rel="stylesheet" href="${pageContext.request.contextPath}/css/master.css" />
+
+    <link href="${pageContext.request.contextPath}/css/UserTable.css" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="${pageContext.request.contextPath}/assets/favicon.ico" type="image/x-icon" rel="icon" />
@@ -90,6 +92,7 @@
                 </div>
 
             </div>
+            <%@include file="./../../componant/UserTable.jsp"%>
 
 
         </div>
